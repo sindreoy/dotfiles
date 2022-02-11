@@ -153,3 +153,6 @@ alias mux=tmuxinator
 # Git aliases
 alias rebase='git fetch origin main && git rebase origin/main && git push -f'
 
+# Alias python shell
+alias shp='python manage.py shell_plus'
+
