@@ -156,3 +156,13 @@ alias rebase='git fetch origin main && git rebase origin/main && git push -f'
 # Alias python shell
 alias shp='python manage.py shell_plus'
 
+# Alias run django server
+alias runserver='python manage.py runserver localhost:8000'
+
+# Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /opt/homebrew/bin/virtualenvwrapper.sh
+
