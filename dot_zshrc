@@ -120,6 +120,9 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ########### My additions ###########
+# Shell integrations
+source ~/.iterm2_shell_integration.zsh
+
 # Add klipy to alias 
 alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias tienda="cd ~/gitprojects/tienda"
@@ -148,6 +151,8 @@ export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
 
 # Set editor
 export EDITOR='vim'
+
+# Alias tmuxinator
 alias mux=tmuxinator
 
 # Git aliases
