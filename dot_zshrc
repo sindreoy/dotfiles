@@ -127,6 +127,8 @@ source ~/.iterm2_shell_integration.zsh
 alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias tienda="cd ~/gitprojects/tienda"
 alias tiendaweb="cd ~/gitprojects/tienda-web"
+alias velo=~/gitprojects/velo/.venv/bin/velo
+
 # Override cat with bat
 alias cat="bat --paging=never"
 
@@ -136,6 +138,8 @@ eval "$(direnv hook zsh)"
 # Configure custom path
 export PATH="/Users/sindre/.klipy/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
 
 # Add FZF settings
 export FZF_BASE=/opt/homebrew/bin/fzf
@@ -163,6 +167,7 @@ alias shp='python manage.py shell_plus'
 
 # Alias run django server
 alias runserver='python manage.py runserver localhost:8000'
+alias migrate='python manage.py migrate'
 
 # Virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
