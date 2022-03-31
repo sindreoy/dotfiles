@@ -23,7 +23,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME=""
 
@@ -87,14 +87,18 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git) # zsh-syntax-highlighting zsh-autosuggestions fzf)
-
+plugins=(git zsh-autosuggestions fzf zsh-syntax-highlighting) 
+#ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
+#ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
+#ZSH_HIGHLIGHT_STYLES[arg0]=fg=green
 source $ZSH/oh-my-zsh.sh
 
 # Pure prompt configuration
 fpath+=$HOME/.zsh/pure
 
 autoload -U promptinit; promptinit
+
+PURE_PROMPT_SYMBOL=">"
 prompt pure
 
 # User configuration
@@ -128,9 +132,6 @@ prompt pure
 
 # Override cat with bat
 alias cat="bat --paging=never"
-
-# Configure direnv
-eval "$(direnv hook zsh)"
 
 # Fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -190,6 +191,10 @@ source /opt/homebrew/bin/virtualenvwrapper.sh
 
 # Ngrok
 export PATH="/Users/sindre/executables:$PATH"
+
+# Configure direnv
+eval "$(direnv hook zsh)"
+
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
