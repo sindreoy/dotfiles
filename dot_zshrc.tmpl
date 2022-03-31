@@ -156,47 +156,47 @@ alias migrate='python manage.py migrate'
 
 # Check for Linux or MacOS
 {{- if eq .chezmoi.os "darwin" }}
-    # MacOS
-    ########### My additions ###########
-    # Shell integrations
-    source ~/.iterm2_shell_integration.zsh
+# MacOS
+########### My additions ###########
+# Shell integrations
+source ~/.iterm2_shell_integration.zsh
 
-    # Add klipy to alias 
-    alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
-    alias tienda="cd ~/gitprojects/tienda"
-    alias tiendaweb="cd ~/gitprojects/tienda-web"
-    alias velo=~/gitprojects/velo/.venv/bin/velo
+# Add klipy to alias 
+alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
+alias tienda="cd ~/gitprojects/tienda"
+alias tiendaweb="cd ~/gitprojects/tienda-web"
+alias velo=~/gitprojects/velo/.venv/bin/velo
 
-    # Configure custom path
-    export PATH="/Users/sindre/.klipy/bin:$PATH"
-    export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-    . /opt/homebrew/opt/asdf/libexec/asdf.sh
-    export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
+# Configure custom path
+export PATH="/Users/sindre/.klipy/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
 
-    # Add FZF settings
-    export FZF_BASE=/opt/homebrew/bin/fzf
-    DISABLE_FZF_AUTO_COMPLETION="false"
-    DISABLE_FZF_KEY_BINDINGS="false"
+# Add FZF settings
+export FZF_BASE=/opt/homebrew/bin/fzf
+DISABLE_FZF_AUTO_COMPLETION="false"
+DISABLE_FZF_KEY_BINDINGS="false"
     
-    # Alias tmuxinator
-    alias mux=tmuxinator
+# Alias tmuxinator
+alias mux=tmuxinator
 
-    # Virtualenvwrapper
-    export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-    export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Devel
-    source /opt/homebrew/bin/virtualenvwrapper.sh
+# Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /opt/homebrew/bin/virtualenvwrapper.sh
 
-    # Ngrok
-    export PATH="/Users/sindre/executables:$PATH"
+# Ngrok
+export PATH="/Users/sindre/executables:$PATH"
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
-    # Linux
-    if cat /etc/*release | grep ^NAME | grep Manjaro; then
-        echo "Manjaro found"
-    else
-        echo "Distribution not recognized"
-    fi
+# Linux
+if cat /etc/*release | grep ^NAME | grep Manjaro; then
+    echo "Manjaro found"
+else
+    echo "Distribution not recognized"
+fi
 {{- end }}
