@@ -154,6 +154,8 @@ alias shp='python manage.py shell_plus'
 alias runserver='python manage.py runserver localhost:8000'
 alias migrate='python manage.py migrate'
 
+# Configure direnv
+eval "$(direnv hook zsh)"
 
 # Check for Linux or MacOS
 {{- if eq .chezmoi.os "darwin" }}
@@ -163,8 +165,8 @@ alias migrate='python manage.py migrate'
 source ~/.iterm2_shell_integration.zsh
 
 # Add klipy to alias 
-alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias tienda="cd ~/gitprojects/tienda"
+alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias tiendaweb="cd ~/gitprojects/tienda-web"
 alias velo=~/gitprojects/velo/.venv/bin/velo
 
@@ -192,15 +194,27 @@ source /opt/homebrew/bin/virtualenvwrapper.sh
 # Ngrok
 export PATH="/Users/sindre/executables:$PATH"
 
-# Configure direnv
-eval "$(direnv hook zsh)"
-
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
 # Linux
-if cat /etc/*release | grep ^NAME | grep Manjaro; then
-    echo "Manjaro found"
+if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
+    # Aliases
+    alias tienda="cd $HOME/gitprojects/tienda"
+    alias klipy="/home/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
+    alias open="xdg-open"
+
+    # Pyenv stuff
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+
+    # Other stuff
+    export PATH="/home/sindre/.klipy/bin:$PATH"
+    # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
+    
+    # Node version manager
+    source /usr/share/nvm/init-nvm.sh
 else
     echo "Distribution not recognized"
 fi
