@@ -151,7 +151,7 @@ alias merge='git fetch origin main && git merge origin/main && git push'
 alias shp='python manage.py shell_plus'
 
 # Alias run django server
-alias runserver='python manage.py runserver localhost:8000'
+alias runserver='JS_DEV_SERVER_ENABLED=true python manage.py runserver localhost:8000'
 alias migrate='python manage.py migrate'
 
 # Configure direnv
@@ -166,8 +166,9 @@ source ~/.iterm2_shell_integration.zsh
 
 # Add klipy to alias 
 alias tienda="cd ~/gitprojects/tienda"
-alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias tiendaweb="cd ~/gitprojects/tienda-web"
+alias spmicro="cd ~/gitprojects/snowplow-micro-configuration"
+alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 alias velo=~/gitprojects/velo/.venv/bin/velo
 
 # Configure custom path
@@ -183,6 +184,8 @@ DISABLE_FZF_KEY_BINDINGS="false"
     
 # Alias tmuxinator
 alias mux=tmuxinator
+alias mst="mux start"
+alias msp="mux stop"
 
 # Virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
