@@ -215,7 +215,7 @@ if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
     # Other stuff
     export PATH="/home/sindre/.klipy/bin:$PATH"
     # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
-    
+    eval $(thefuck --alias)
     # Node version manager
     source /usr/share/nvm/init-nvm.sh
 else
