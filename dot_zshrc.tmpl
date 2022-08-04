@@ -221,6 +221,11 @@ if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
     export PATH="$PATH:$GEM_HOME/bin"
 
+    # Alias tmuxinator
+    alias mux=tmuxinator
+    alias mst="mux start"
+    alias msp="mux stop"
+
 else
     echo "Distribution not recognized"
 fi
