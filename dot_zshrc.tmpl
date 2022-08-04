@@ -216,6 +216,11 @@ if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
     eval $(thefuck --alias)
     # Node version manager
     # source /usr/share/nvm/init-nvm.sh
+
+    # Ruby gems
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
+
 else
     echo "Distribution not recognized"
 fi
