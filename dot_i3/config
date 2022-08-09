@@ -290,6 +290,31 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+#Sindre
+assign [class="Chromium"] $ws1
+assign [class="Code"] $ws2
+assign [class="Alacritty"] $ws3
+assign [class="Slack"] $ws5
+assign [class="Thunderbird"] $ws5
+for_window [class="Spotify"] move to workspace $ws6
+
+workspace $ws1 output DP-2
+workspace $ws2 output DP-2
+workspace $ws3 output DP-2
+workspace $ws4 output DP-2
+workspace $ws5 output DP-0
+workspace $ws6 output DP-0
+workspace $ws7 output DP-0
+workspace $ws8 output DP-0
+
+exec chromium
+exec code
+exec alacritty
+exec slack
+exec thunderbird
+exec spotify
+#End Sindre
+
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
