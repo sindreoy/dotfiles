@@ -6,3 +6,7 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" Allow fuzzy finder in vim
+set rtp+=/opt/homebrew/opt/fzf
+" turn hybrid line numbers on
+set number relativenumber
