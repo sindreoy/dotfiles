@@ -59,7 +59,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec chromium
+bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -291,7 +291,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #Sindre
-assign [class="Chromium"] $ws1
+assign [class="Firefox-developer-edition"] $ws1
 assign [class="Code"] $ws2
 assign [class="Alacritty"] $ws3
 assign [class="Slack"] $ws5
@@ -307,7 +307,7 @@ workspace $ws6 output DP-0
 workspace $ws7 output DP-0
 workspace $ws8 output DP-0
 
-exec chromium
+exec firefox-developer-edition
 exec code
 exec alacritty
 exec slack
