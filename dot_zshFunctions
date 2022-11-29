@@ -1,0 +1,5 @@
+ghf () {
+    files=$(git ls-files -m) 
+    black $files
+    isort $files
+}

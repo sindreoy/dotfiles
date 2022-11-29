@@ -157,6 +157,9 @@ alias migrate='python manage.py migrate'
 # Configure direnv
 eval "$(direnv hook zsh)"
 
+# Load my own shell functions
+source "$HOME/.zshFunctions"
+
 # Check for Linux or MacOS
 {{- if eq .chezmoi.os "darwin" }}
 # MacOS
