@@ -151,7 +151,8 @@ alias merge='git fetch origin main && git merge origin/main && git push'
 alias shp='python manage.py shell_plus'
 
 # Alias run django server
-alias runserver='JS_DEV_SERVER_ENABLED=true python manage.py runserver localhost:8000'
+# Remember to do npm run build:production so you dont have to run vite
+alias runserver='python manage.py runserver localhost:8000'
 alias migrate='python manage.py migrate'
 
 # Configure direnv
