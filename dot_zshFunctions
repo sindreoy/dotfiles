@@ -1,5 +1,3 @@
 ghf () {
-    files=$(git ls-files -m) 
-    black $files
-    isort $files
+  git ls-files "*.py" -m | xargs -I % sh -c 'black %; isort %; flake8 %'
 }
