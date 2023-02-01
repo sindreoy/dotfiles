@@ -207,8 +207,40 @@ alias checkin='cd $HOME/gitprojects/deskbooker && deskbooker checkin && cd -'
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
-# Linux
-if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
+# LINUX
+# Check distribution
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    OS=$NAME
+    VER=$VERSION_ID
+elif type lsb_release >/dev/null 2>&1; then
+    # linuxbase.org
+    OS=$(lsb_release -si)
+    VER=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]; then
+    # For some versions of Debian/Ubuntu without lsb_release command
+    . /etc/lsb-release
+    OS=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]; then
+    # Older Debian/Ubuntu/etc.
+    OS=Debian
+    VER=$(cat /etc/debian_version)
+elif [ -f /etc/SuSe-release ]; then
+    # Older SuSE/etc.
+    ...
+elif [ -f /etc/redhat-release ]; then
+    # Older Red Hat, CentOS, etc.
+    ...
+else
+    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+# End check distribution
+
+if [[ $OS == "Manjaro" ]]; then
     # Aliases
     alias tienda="cd $HOME/gitprojects/tienda"
     alias tiendaweb="cd ~/gitprojects/tienda-web"
@@ -233,7 +265,21 @@ if ! cat /etc/*release | grep -q ^NAME | grep Manjaro; then
     alias mst="mux start"
     alias msp="mux stop"
 
-else
-    echo "Distribution not recognized"
+elif [[ $OS == "Arch Linux" ]]; then 
+    # Aliases
+    alias tienda="cd $HOME/gitprojects/tienda"
+    alias tiendaweb="cd ~/gitprojects/tienda-web"
+    alias klipy="/home/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
+    alias open="xdg-open"
+
+    #asdf version manager
+    . /opt/asdf-vm/asdf.sh
+    
+    # Other stuff
+    export PATH="/home/sindre/.klipy/bin:$PATH"
+    
+    # Ruby gems
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
 fi
 {{- end }}
