@@ -175,13 +175,14 @@ alias tienda="cd ~/gitprojects/tienda"
 alias tiendaweb="cd ~/gitprojects/tienda-web"
 alias spmicro="cd ~/gitprojects/snowplow-micro-configuration"
 alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
-alias velo="~/gitprojects/velo/.venv/bin/python -m velo.cli.main"
 
 # Configure custom path
 export PATH="/Users/sindre/.klipy/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export PATH="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 
 # Add FZF settings
 export FZF_BASE=/opt/homebrew/bin/fzf
@@ -192,13 +193,6 @@ DISABLE_FZF_KEY_BINDINGS="false"
 alias mux=tmuxinator
 alias mst="mux start"
 alias msp="mux stop"
-
-# Virtualenvwrapper
-#export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-#export VIRTUALENVWRAPPER_VIRTUALENV=/opt/homebrew/bin/virtualenv
-#export WORKON_HOME=$HOME/.virtualenvs
-#export PROJECT_HOME=$HOME/Devel
-#source /opt/homebrew/bin/virtualenvwrapper.sh
 
 # Ngrok
 export PATH="/Users/sindre/executables:$PATH"
