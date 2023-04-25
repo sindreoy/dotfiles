@@ -272,6 +272,9 @@ elif [[ $OS == "Arch Linux" ]]; then
     # Other stuff
     export PATH="/home/sindre/.klipy/bin:$PATH"
     
+    # For gcloud plugin
+    USE_GKE_GCLOUD_AUTH_PLUGIN=True
+    
     # Ruby gems
     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
     export PATH="$PATH:$GEM_HOME/bin"
