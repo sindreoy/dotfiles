@@ -198,6 +198,9 @@ alias msp="mux stop"
 export PATH="/Users/sindre/executables:$PATH"
 alias checkin='cd $HOME/gitprojects/deskbooker && deskbooker checkin && cd -'
 
+# Ruby gems
+export GEM_HOME="$HOME/.gem"
+
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
