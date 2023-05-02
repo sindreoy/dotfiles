@@ -1,4 +1,6 @@
-require("potetfis.keybinds")
-require("potetfis.options")
-require("potetfis.plugins")
+require "options"
+require "keymaps"
+require "Lazy"
+require "autocommands"
+require "potetfis.ignore-list"
 

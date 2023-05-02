@@ -1,0 +1,6 @@
+bcc4cb1f8feeb5c343fe94fb514ae7a181f0025a		branch 'master' of https://github.com/LunarVim/nvim-basic-ide
+1f1549e15a8f3933d17bfc3bcd57d2252fb648df	not-for-merge	branch 'copilot-0.7' of https://github.com/LunarVim/nvim-basic-ide
+a3e39b040b0cbe58fbb0a9e8c0fbff8854593e84	not-for-merge	branch 'ide-0.7' of https://github.com/LunarVim/nvim-basic-ide
+b9c960ab4009bb165c7601fdb303fceef477d130	not-for-merge	branch 'ide-0.8' of https://github.com/LunarVim/nvim-basic-ide
+492796d86f6a08b5ab7eaac1f8254c693008c924	not-for-merge	branch 'java-ide-0.7' of https://github.com/LunarVim/nvim-basic-ide
+b24d7472ffa30b3aabe5023ddb48b1a3bda2489c	not-for-merge	branch 'rust-ide-0.7' of https://github.com/LunarVim/nvim-basic-ide

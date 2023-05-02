@@ -1,0 +1,10 @@
+# pack-refs with: peeled fully-peeled sorted 
+1f1549e15a8f3933d17bfc3bcd57d2252fb648df refs/remotes/origin/copilot-0.7
+a3e39b040b0cbe58fbb0a9e8c0fbff8854593e84 refs/remotes/origin/ide-0.7
+b9c960ab4009bb165c7601fdb303fceef477d130 refs/remotes/origin/ide-0.8
+492796d86f6a08b5ab7eaac1f8254c693008c924 refs/remotes/origin/java-ide-0.7
+81c0b7646ea95cd67364ae02214ba0c043c14018 refs/remotes/origin/master
+b24d7472ffa30b3aabe5023ddb48b1a3bda2489c refs/remotes/origin/rust-ide-0.7
+cf387d9432e77b8eef66db0f6a3a741f88f68bc7 refs/tags/1
+f03955dc1e5879164f9229d44d98ca81a948cbfb refs/tags/2
+4b66b1141c5477c6152f80426683974d18c84394 refs/tags/3
