@@ -53,7 +53,13 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- NerdTree
+vim.api.nvim_set_keymap("n", "<Leader>tt", ":NERDTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>tf", ":NERDTreeFind<CR>", { noremap = true, silent = true })
+vim.g.NERDTreeQuitOnOpen = 1
+vim.g.NERDTreeWinSize = 30
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
