@@ -34,7 +34,6 @@ function M.config()
             untracked = "U",
             deleted = "",
             ignored = "◌",
-            timeout = 400,
           },
         },
       },
@@ -55,8 +54,8 @@ function M.config()
       mappings = {
         list = {
           { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-          { key = "h", cb = tree_cb "close_node" },
-          { key = "v", cb = tree_cb "vsplit" },
+          { key = "h",                  cb = tree_cb "close_node" },
+          { key = "v",                  cb = tree_cb "vsplit" },
         },
       },
     },
