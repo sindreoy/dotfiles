@@ -70,9 +70,16 @@ function M.config()
         },
       }
     else
+      local cwd = vim.fn.getcwd()
+      local pythonpath = os.getenv("HOME") .. '/.virtualenvs/debugpy/bin/python'
+      if vim.fn.executable(cwd .. '/venv/bin/python') == 1 then
+        pythonpath = cwd .. '/venv/bin/python'
+      elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
+        pythonpath = cwd .. '/.venv/bin/python'
+      end
       cb {
         type = "executable",
-        command = os.getenv "HOME" .. "/.virtualenvs/debugpy/bin/python",
+        command = pythonpath,
         args = { "-m", "debugpy.adapter" },
         options = {
           source_filetype = "python",
