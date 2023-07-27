@@ -35,11 +35,9 @@ function M.config()
   null_ls.setup {
     debug = false,
     sources = {
-      formatting.prettier,
       formatting.black.with { extra_args = { "--fast" } },
       formatting.isort,
       formatting.stylua,
-      formatting.google_java_format,
       diagnostics.flake8,
     },
 

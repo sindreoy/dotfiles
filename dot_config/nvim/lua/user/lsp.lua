@@ -45,6 +45,15 @@ function M.config()
       client.server_capabilities.documentFormattingProvider = false
     end
 
+    lspconfig.eslint.setup({
+      on_attach = function(client, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          command = "EslintFixAll",
+        })
+      end,
+    })
+
     lsp_keymaps(bufnr)
     require("illuminate").on_attach(client)
   end
