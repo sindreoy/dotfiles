@@ -144,7 +144,7 @@ alias cat="bat --paging=never"
 export EDITOR='nvim'
 
 # Git aliases
-alias rebase='git fetch origin main && git rebase origin/main && git push -f'
+alias rebase='git fetch origin main && git rebase origin/main && git push --force-with-lease'
 alias merge='git fetch origin main && git merge origin/main && git push'
 
 # Alias python shell
