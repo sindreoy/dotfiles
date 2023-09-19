@@ -24,7 +24,7 @@ function M.config()
     keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   end
 
-    local function on_attach(_, bufnr)
+  local function on_attach(_, bufnr)
 	  local function buf_set_option(...)
 		  vim.api.nvim_buf_set_option(bufnr, ...)
 	  end
@@ -34,62 +34,10 @@ function M.config()
 
 
   local lspconfig = require "lspconfig"
-  lspconfig.pylsp.setup({
-	  on_attach = on_attach,
-	  filetypes = { "python" },
-	  configurationSources = { "flake8" },
-	  settings = {
-		  pyls = {
-			  plugins = {
-				  -- Optional providers
-				  rope = {
-					  enabled = true,
-				  },
-				  pyflakes = {
-					  enabled = false,
-				  },
-				  mccabe = {
-					  enabled = false,
-				  },
-				  pycodestyle = {
-					  enabled = false,
-				  },
-				  pydocstyle = {
-					  enabled = true,
-				  },
-				  autopep8 = {
-					  enabled = true,
-				  },
-				  yapf = {
-					  enabled = true,
-				  },
-				  flake8 = {
-					  enabled = true,
-					  maxLineLength = 160,
-				  },
-				  pylint = {
-					  enabled = false,
-				  },
-				  -- 3rd Party plugins
-				  pyls_mypy = {
-					  enabled = true,
-				  },
-				  pyls_isort = {
-					  enabled = true,
-				  },
-				  pyls_lsp_black = {
-					  enabled = true,
-				  },
-				  pyls_memestra = {
-					  enabled = true,
-				  },
-				  pyls_rope = {
-					  enabled = true,
-				  },
-			  },
-		  },
-	  },
-  })
+  -- lspconfig.pylsp.setup({
+	 --  on_attach = on_attach,
+	 --  filetypes = { "python" },
+  -- })
 
   lspconfig.tsserver.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
   lspconfig.vimls.setup({ on_attach = on_attach })
