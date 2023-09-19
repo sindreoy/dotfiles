@@ -15,7 +15,6 @@ local M = {
   },
 }
 
--- local actions = require "telescope.actions"
 function M.config()
   local actions = require "telescope.actions"
   local telescope = require "telescope"

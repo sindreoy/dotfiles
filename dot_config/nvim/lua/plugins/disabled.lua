@@ -5,8 +5,6 @@ return {
   -- { "hrsh7th/nvim-cmp", enabled = false },
   -- { "folke/tokyonight.nvim", enabled = false },
   -- { "numToStr/Comment.nvim", enabled = false },
-  { "mfussenegger/nvim-dap", enabled = false },
-  { "rcarriga/nvim-dap-ui", enabled = false },
   -- { "lewis6991/gitsigns.nvim", enabled = false },
   -- { "RRethy/vim-illuminate", enabled = false },
   -- { "lukas-reineke/indent-blankline.nvim", enabled = false },
