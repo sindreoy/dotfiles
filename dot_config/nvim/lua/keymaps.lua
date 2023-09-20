@@ -71,3 +71,4 @@ keymap("x", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(v
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
 keymap("n", "<leader>lp", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+

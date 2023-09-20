@@ -1,4 +1,5 @@
-require "options"
-require "keymaps"
 require "Lazy"
+require "pluginConfig"
 require "autocommands"
+require "keymaps"
+require "options"
