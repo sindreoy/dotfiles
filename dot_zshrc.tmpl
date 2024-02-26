@@ -87,7 +87,7 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions fzf zsh-syntax-highlighting) 
+plugins=(git zsh-autosuggestions fzf zsh-syntax-highlighting)
 #ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=green,underline
 #ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,underline
 #ZSH_HIGHLIGHT_STYLES[arg0]=fg=green
@@ -170,14 +170,11 @@ source "$HOME/.zshFunctions"
 # Shell integrations
 source ~/.iterm2_shell_integration.zsh
 
-# Add klipy to alias 
 alias tienda="cd ~/gitprojects/tienda"
 alias tiendaweb="cd ~/gitprojects/tienda-web"
 alias spmicro="cd ~/gitprojects/snowplow-micro-configuration"
-alias klipy="/Users/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
 
 # Configure custom path
-export PATH="/Users/sindre/.klipy/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
@@ -188,7 +185,7 @@ export PATH="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
 export FZF_BASE=/opt/homebrew/bin/fzf
 DISABLE_FZF_AUTO_COMPLETION="false"
 DISABLE_FZF_KEY_BINDINGS="false"
-    
+
 # Alias tmuxinator
 alias mux=tmuxinator
 alias mst="mux start"
@@ -196,7 +193,6 @@ alias msp="mux stop"
 
 # Ngrok
 export PATH="/Users/sindre/executables:$PATH"
-alias checkin='cd $HOME/gitprojects/deskbooker && deskbooker checkin && cd -'
 
 # Ruby gems
 export GEM_HOME="$HOME/.gem"
@@ -241,14 +237,12 @@ if [[ $OS == "Manjaro" ]]; then
     # Aliases
     alias tienda="cd $HOME/gitprojects/tienda"
     alias tiendaweb="cd ~/gitprojects/tienda-web"
-    alias klipy="/home/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
     alias open="xdg-open"
 
     #asdf version manager
     . /opt/asdf-vm/asdf.sh
 
     # Other stuff
-    export PATH="/home/sindre/.klipy/bin:$PATH"
     # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/kolonial-terraform-admin.json"
     # Node version manager
     # source /usr/share/nvm/init-nvm.sh
@@ -262,22 +256,18 @@ if [[ $OS == "Manjaro" ]]; then
     alias mst="mux start"
     alias msp="mux stop"
 
-elif [[ $OS == "Arch Linux" ]]; then 
+elif [[ $OS == "Arch Linux" ]]; then
     # Aliases
     alias tienda="cd $HOME/gitprojects/tienda"
     alias tiendaweb="cd ~/gitprojects/tienda-web"
-    alias klipy="/home/sindre/gitprojects/klipy/.venv/bin/python -m klipy"
     alias open="xdg-open"
 
     #asdf version manager
     . /opt/asdf-vm/asdf.sh
-    
-    # Other stuff
-    export PATH="/home/sindre/.klipy/bin:$PATH"
-    
+
     # For gcloud plugin
     USE_GKE_GCLOUD_AUTH_PLUGIN=True
-    
+
     # Ruby gems
     export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
     export PATH="$PATH:$GEM_HOME/bin"
